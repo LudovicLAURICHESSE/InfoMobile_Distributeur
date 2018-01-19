@@ -1,10 +1,17 @@
 package info.dicj.distributeur.Distributeur;
 
+import info.dicj.distributeur.Distributeur.exception.AucunDistribuableException;
+import info.dicj.distributeur.Distributeur.exception.DebordementMelangeException;
+
 /**
  * Created by ludod on 14/01/2018.
  */
 
 public class Distribuable implements Produit {
+    static final String EXCEPT_PLEIN ="Melange plein !";
+    static final String EXCEPT_VIDE="Melange vide !";
+    static final String EXCEPT_MELANGE ="Aucun mélange !";
+
     private int quantite;
     private String nom;
     private String description;
@@ -48,11 +55,15 @@ public class Distribuable implements Produit {
         return description;
     }
 
-    public void ajouter(){
-
+    public void ajouter() throws Exception{
+        if(quantite == MAX){
+            throw new DebordementMelangeException(EXCEPT_PLEIN);
+        }
     }
-    public void consommer(){
-
+    public void consommer()throws Exception{
+        if(this.estVide()){
+            throw new AucunDistribuableException(EXCEPT_VIDE);
+        }
     }
     @Override
     public String toString() {

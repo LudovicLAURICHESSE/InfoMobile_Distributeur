@@ -7,7 +7,7 @@ import info.dicj.distributeur.Distributeur.Boisson;
  */
 
 public class Pepsi extends Boisson {
-    public Pepsi(String nom, String description) {
-        super(nom, description);
+    public Pepsi() {
+        super("PEPSI", "Soda gazeux");
     }
 }

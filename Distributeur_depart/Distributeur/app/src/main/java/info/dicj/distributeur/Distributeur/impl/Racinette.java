@@ -7,7 +7,7 @@ import info.dicj.distributeur.Distributeur.Boisson;
  */
 
 public class Racinette extends Boisson {
-    public Racinette(String nom, String description) {
-        super(nom, description);
+    public Racinette() {
+        super("RACINETTE", "C'est de la racinette");
     }
 }

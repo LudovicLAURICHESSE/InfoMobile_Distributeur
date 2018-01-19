@@ -7,7 +7,7 @@ import info.dicj.distributeur.Distributeur.Saveur;
  */
 
 public class Gingembre extends Saveur {
-    public Gingembre(String nom, String description) {
-        super(nom, description);
+    public Gingembre() {
+        super("GINGEMBRE", "Saveur gingembre");
     }
 }

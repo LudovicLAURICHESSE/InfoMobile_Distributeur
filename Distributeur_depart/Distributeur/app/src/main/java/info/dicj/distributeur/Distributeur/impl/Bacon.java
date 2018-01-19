@@ -7,6 +7,6 @@ import info.dicj.distributeur.Distributeur.Saveur;
 
 public class Bacon extends Saveur {
     public Bacon() {
-        super(getClass().getSimpleName(), "Du bacon pur porc halal!");
+        super("BACON", "Bacon pur porc");
     }
 }

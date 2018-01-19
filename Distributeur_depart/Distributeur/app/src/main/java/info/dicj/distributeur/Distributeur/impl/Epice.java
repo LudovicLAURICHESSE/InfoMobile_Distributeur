@@ -7,7 +7,7 @@ import info.dicj.distributeur.Distributeur.Saveur;
  */
 
 public class Epice extends Saveur {
-    public Epice(String nom, String description) {
-        super(nom, description);
+    public Epice() {
+        super("EPICE", "Ca pique !");
     }
 }
