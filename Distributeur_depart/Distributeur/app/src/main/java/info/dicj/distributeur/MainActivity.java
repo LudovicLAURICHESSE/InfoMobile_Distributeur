@@ -5,16 +5,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import info.dicj.distributeur.Distributeur.Distributeur;
+
 public class MainActivity extends AppCompatActivity {
 
-    //private Distributeur distributeur;
+    private Distributeur distributeur;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // distributeur = new Distributeur();
+        distributeur = new Distributeur();
 
         Log.i("DICJ", "MainActivity.oncreate");
     }

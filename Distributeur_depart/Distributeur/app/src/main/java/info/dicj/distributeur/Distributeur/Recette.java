@@ -5,4 +5,5 @@ package info.dicj.distributeur.Distributeur;
  */
 
 public interface Recette {
+    public String getInformation();
 }

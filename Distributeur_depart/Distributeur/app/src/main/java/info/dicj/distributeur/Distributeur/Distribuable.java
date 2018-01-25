@@ -22,7 +22,6 @@ public class Distribuable implements Produit {
     }
 
     public void setQuantite(int quantite) {
-
         this.quantite = quantite;
     }
 
