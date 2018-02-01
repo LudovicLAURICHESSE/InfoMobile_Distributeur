@@ -4,17 +4,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 import info.dicj.distributeur.Distributeur.Distributeur;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private Distributeur distributeur;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.distributeur);
 
         distributeur = new Distributeur();
 
@@ -110,6 +114,22 @@ public class MainActivity extends AppCompatActivity {
         */
     }
 
+    public void changerVisibiliteBouttonVerser2(View view) {
+        Button verser2 = ((Button)findViewById(R.id. boutton_verser_precedent));
+        if (verser2.getVisibility()==View.GONE)
+            verser2.setVisibility(View.VISIBLE);
+        else
+            verser2.setVisibility(View.GONE);
+    }
+
+    public void changerMessageAdore(View view) {
+        changerMessage(true);
+    }
+
+    public void changerMessageNonAdore(View view) {
+        changerMessage(false);
+    }
+
     /*
     public void afficherRecette(Recette recette){
 
@@ -122,4 +142,22 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
     */
+
+    private void changerMessage(boolean adore) {
+        TextView message = ((TextView)findViewById(R.id.testAdore));
+        TextView nom = ((TextView)findViewById(R.id.nom));
+
+        if (nom.getText() == null || nom.getText().toString().isEmpty()){
+            message.setText(R.string.message_nom_abs);
+        }
+        else if (adore){
+            message.setText("Bonjour " + nom.getText().toString() + " merci de ton entrain!");
+        }
+        else {
+            message.setText("Bonjour " + nom.getText().toString() + " ne perds pas espoir!");
+        }
+    }
+
+
+
 }

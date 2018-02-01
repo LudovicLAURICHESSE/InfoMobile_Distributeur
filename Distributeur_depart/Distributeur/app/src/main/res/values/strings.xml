@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Distributeur</string>
+    <string name="verser2">Verser (mélange précédent)</string>
+    <string name="pepsi">Pepsi</string>
+    <string name="orangeade">Orangeade</string>
+    <string name="racinette">Racinette</string>
+    <string name="fraise">Fraise</string>
+    <string name="epices">épices</string>
+    <string name="bacon">bacon</string>
+    <string name="gingembre">gingembre</string>
+    <string name="nouveau">Nouveau</string>
+    <string name="verser">Verser</string>
+    <string name="titre">Super Distributeur de Ludo et Sylvain</string>
+    <string name="desc_capy">un beau capybara</string>
+    <string name="sondage">Participer au sondage</string>
+    <string name="sondage_nom">Entrez votre nom</string>
+    <string name="boissons">Boissons</string>
+    <string name="saveurs">Saveurs</string>
+    <string name="actions">Actions</string>
+    <string name="j_adore_le_cours">J\'adore le cours</string>
+    <string name="je_n_adore_pas_le_cours">Je n\'adore pas le cours</string>
+    <string name="message_nom_abs">Met un nom, soit pas timide!</string>
+    <string name="check_bouton_verser">Désactiver le bouton Verser Mélange Précédent</string>
 </resources>

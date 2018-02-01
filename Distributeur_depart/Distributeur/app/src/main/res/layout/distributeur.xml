@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bleu">
+
+    <ScrollView
+        android:id="@+id/scrollPPal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="30">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ligne"
+                android:background="@color/rouge"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/titre"
+                android:textSize="@dimen/taille_titre"
+                android:textColor="@color/blanc"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/desc_capy"
+                android:src="@drawable/capy"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ligne"
+                android:background="@color/rouge"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sondage"
+                android:textColor="@color/blanc"
+                android:textStyle="bold"
+                android:textSize="@dimen/taille_texte"/>
+
+            <EditText
+                android:id="@+id/nom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/sondage_nom"
+                android:inputType="textCapWords"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/coursAdore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/j_adore_le_cours"
+                    android:onClick="changerMessageAdore"/>
+
+                <RadioButton
+                    android:id="@+id/coursNonAdore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/je_n_adore_pas_le_cours"
+                    android:onClick="changerMessageNonAdore"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/testAdore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/taille_texte"/>
+
+            <CheckBox
+                android:id="@+id/check_verser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/check_bouton_verser"
+                android:onClick="changerVisibiliteBouttonVerser2"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ligne"
+                android:background="@color/rouge"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/boissons"
+                android:textSize="@dimen/taille_texte"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="@string/pepsi"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:text="@string/orangeade"/>
+                </TableRow>
+
+                <TableRow>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="@string/racinette"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:text="@string/fraise"/>
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/saveurs"
+                android:textSize="@dimen/taille_texte"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/but_epices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/epices"/>
+
+                <Button
+                    android:id="@+id/but_bacon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/but_epices"
+                    android:layout_toEndOf="@id/but_epices"
+                    android:text="@string/bacon"/>
+
+                <Button
+                    android:id="@+id/but_gin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/but_bacon"
+                    android:layout_toEndOf="@id/but_bacon"
+                    android:text="@string/gingembre"/>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/actions"
+                android:textSize="@dimen/taille_texte"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nouveau"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/verser"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/boutton_verser_precedent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="70"
+        android:text="@string/verser2" />
+
+</LinearLayout>
