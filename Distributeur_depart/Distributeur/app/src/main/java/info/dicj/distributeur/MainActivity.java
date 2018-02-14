@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity{
 
         Log.i("DICJ", "MainActivity.ajouterSaveur");
 
-        /*
+
         try {
             switch(view.getId()){
 
@@ -73,19 +73,16 @@ public class MainActivity extends AppCompatActivity{
                 case R.id.sBacon:       distributeur.ajouterSaveur("BACON");
                                         break;
             }
-        } catch (AucunDistribuableException e) {
-            e.printStackTrace();
-        } catch (DebordementMelangeException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        */
+
     }
 
     public void ajouterBoisson(View view) {
 
         Log.i("DICJ", "MainActivity.ajouterBoisson");
 
-        /*
         try {
             switch(view.getId()){
                 case R.id.bPepsi:       distributeur.ajouterBoisson("PEPSI");
@@ -97,21 +94,17 @@ public class MainActivity extends AppCompatActivity{
                 case R.id.bFraise:      distributeur.ajouterBoisson("FRAISE");
                                         break;
             }
-        } catch (AucunDistribuableException e) {
-            e.printStackTrace();
-        } catch (DebordementMelangeException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        */
     }
 
     public void nouveau(View view) {
 
         Log.i("DICJ", "MainActivity.nouveau");
 
-        /*
         distributeur.nouveauMelange();
-        */
+
     }
 
     public void changerVisibiliteBouttonVerser2(View view) {

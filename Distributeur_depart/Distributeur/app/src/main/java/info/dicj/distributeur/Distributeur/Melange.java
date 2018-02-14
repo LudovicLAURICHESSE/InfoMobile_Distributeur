@@ -19,7 +19,20 @@ public class Melange implements Recette {
 
     @Override
     public String getInformation() {
-        return "information";
+        String info = " Votre mélange : \n Boisson(s) : \n";
+
+        for (Boisson b : boissons)
+        {
+            info = info + " - " + b.getNom()+"\n";
+        }
+        if(saveur.estVide()){
+            info = "Aucune saveur. \n";
+        }
+        else {
+            info = "Saveur : " + saveur.getNom()+"\n";
+        }
+
+        return info;
     }
 
     public void ajouterBoisson (Boisson boisson) throws DebordementMelangeException {
@@ -36,10 +49,10 @@ public class Melange implements Recette {
     }
 
     public Recette getRecette(){
-        return null;
+        return this;
     }
 
     public boolean estPret(){
-        return true;
+        return true ? boissons.length !=0 : false;
     }
 }
