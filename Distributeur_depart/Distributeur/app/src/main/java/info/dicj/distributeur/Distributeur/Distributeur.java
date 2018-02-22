@@ -1,5 +1,7 @@
 package info.dicj.distributeur.Distributeur;
 
+import android.util.Log;
+
 import java.util.HashMap;
 import java.util.Set;
 
@@ -17,22 +19,24 @@ import info.dicj.distributeur.Distributeur.impl.Racinette;
  */
 
 public class Distributeur {
-    private HashMap<String,Distribuable> produits;
+    private HashMap<String,Boisson> boissons;
+    private HashMap<String,Saveur> saveurs;
     private Melange melangePrecedent;
     private Melange melangeCourant;
 
     public Distributeur(){
-        produits = new HashMap<>();
+        boissons = new HashMap<>();
+        saveurs = new HashMap<>();
         remplirDistributeur();
     }
     private void remplirDistributeur(){
-        produits.put("BACON",new Bacon());
-        produits.put("EPICE",new Epice());
-        produits.put("GINGEMBRE",new Gingembre());
-        produits.put("PEPSI",new Pepsi());
-        produits.put("FRAISE",new Fraise());
-        produits.put("ORANGEADE",new Orangeade());
-        produits.put("RACINETTE",new Racinette());
+        saveurs.put("BACON",new Bacon());
+        saveurs.put("EPICE",new Epice());
+        saveurs.put("GINGEMBRE",new Gingembre());
+        boissons.put("PEPSI",new Pepsi());
+        boissons.put("FRAISE",new Fraise());
+        boissons.put("ORANGEADE",new Orangeade());
+        boissons.put("RACINETTE",new Racinette());
     }
 
     public Recette melangerRecette(){ return melangeCourant;}
@@ -46,10 +50,10 @@ public class Distributeur {
     public Recette dupliquerMelange(){return melangeCourant.getRecette();}
 
     public void ajouterBoisson(String nom) throws DebordementMelangeException {
-        melangeCourant.ajouterBoisson((Boisson)produits.get(nom));
+        melangeCourant.ajouterBoisson(boissons.get(nom));
     }
 
     public void ajouterSaveur(String nom) throws DebordementMelangeException {
-        melangeCourant.ajouterSaveur((Saveur)produits.get(nom));
+        melangeCourant.ajouterSaveur(saveurs.get(nom));
     }
 }

@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bleu">
+    android:background="#0097A7 ">
 
     <ScrollView
         android:id="@+id/scrollPPal"
@@ -19,7 +19,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/ligne"
-                android:background="@color/rouge"/>
+                android:background="#000000"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -37,7 +37,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/ligne"
-                android:background="@color/rouge"/>
+                android:background="#000000"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -89,7 +89,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/ligne"
-                android:background="@color/rouge"/>
+                android:background="#000000"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -106,13 +106,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_column="0"
-                        android:text="@string/pepsi"/>
+                        android:text="@string/pepsi"
+                        android:id="@+id/but_pepsi"
+                        android:onClick="ajouterBoisson"/>
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_column="1"
-                        android:text="@string/orangeade"/>
+                        android:text="@string/orangeade"
+                        android:id="@+id/but_orange"
+                        android:onClick="ajouterBoisson"/>
                 </TableRow>
 
                 <TableRow>
@@ -120,13 +124,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_column="0"
-                        android:text="@string/racinette"/>
+                        android:text="@string/racinette"
+                        android:id="@+id/but_racine"
+                        android:onClick="ajouterBoisson"/>
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_column="1"
-                        android:text="@string/fraise"/>
+                        android:text="@string/fraise"
+                        android:id="@+id/but_fraise"
+                        android:onClick="ajouterBoisson"/>
                 </TableRow>
             </TableLayout>
 
@@ -145,7 +153,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:text="@string/epices"/>
+                    android:text="@string/epices"
+                    android:onClick="ajouterSaveur"/>/>
 
                 <Button
                     android:id="@+id/but_bacon"
@@ -153,7 +162,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@id/but_epices"
                     android:layout_toEndOf="@id/but_epices"
-                    android:text="@string/bacon"/>
+                    android:text="@string/bacon"
+                    android:onClick="ajouterSaveur"/>/>
 
                 <Button
                     android:id="@+id/but_gin"
@@ -161,7 +171,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@id/but_bacon"
                     android:layout_toEndOf="@id/but_bacon"
-                    android:text="@string/gingembre"/>
+                    android:text="@string/gingembre"
+                    android:onClick="ajouterSaveur"/>
             </RelativeLayout>
 
             <TextView
@@ -178,13 +189,17 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/nouveau"/>
+                    android:text="@string/nouveau"
+                    android:id="@+id/but_nouveau"
+                    android:onClick="nouveau"/>
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/verser"/>
+                    android:text="@string/verser"
+                    android:onClick="verser"/>
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
@@ -193,6 +208,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="70"
-        android:text="@string/verser2" />
+        android:text="@string/verser2"
+        android:onClick="reverser"/>
+
 
 </LinearLayout>
