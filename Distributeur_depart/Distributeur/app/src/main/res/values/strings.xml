@@ -21,4 +21,7 @@
     <string name="je_n_adore_pas_le_cours">Je n\'adore pas le cours</string>
     <string name="message_nom_abs">Met un nom, soit pas timide!</string>
     <string name="check_bouton_verser">Désactiver le bouton Verser Mélange Précédent</string>
+    <string name="bonjour">Bonjour </string>
+    <string name="merci"> merci de ton entrain!</string>
+    <string name="pasmerci"> ne perds pas espoir!</string>
 </resources>

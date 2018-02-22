@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Boutton">
+        <item name="android:background">@color/jaune</item>
+    </style>
+
+    <style name="Boutton.Boisson">
+        <item name="android:background">@color/rouge</item>
+    </style>
 </resources>

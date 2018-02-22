@@ -103,12 +103,14 @@
 
                 <TableRow>
                     <Button
+                        style="@style/Boutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_column="0"
                         android:text="@string/pepsi"/>
 
                     <Button
+                        style="@style/Boutton.Boisson"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_column="1"

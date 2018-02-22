@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Distributor</string>
+    <string name="verser2">Pour (previous mix)</string>
+    <string name="racinette">Root beer</string>
+    <string name="fraise">Strawberry</string>
+    <string name="epices">Spices</string>
+    <string name="gingembre">Ginger</string>
+    <string name="nouveau">New</string>
+    <string name="verser">Pour</string>
+    <string name="titre">Awesome distributor by Ludo and Sylvain</string>
+    <string name="desc_capy">A magnificent capybara</string>
+    <string name="sondage_nom">Enter your name</string>
+    <string name="boissons">Drinks</string>
+    <string name="saveurs">Flavours</string>
+    <string name="j_adore_le_cours">I like this course</string>
+    <string name="je_n_adore_pas_le_cours">I don\'t like this course</string>
+    <string name="message_nom_abs">Enter a name, don\'t be shy!</string>
+    <string name="check_bouton_verser">Disable the \"pour previous mix\" button</string>
+    <string name="actions">Actions</string>
+    <string name="sondage">Poll entry</string>
+    <string name="bacon">Bacon</string>
+    <string name="orangeade">Orangeade</string>
+    <string name="pepsi">Pepsi</string>
+    <string name="bonjour">Hello </string>
+    <string name="merci"> thanks for your spirit!</string>
+    <string name="pasmerci"> do not loose hope!</string>
+</resources>

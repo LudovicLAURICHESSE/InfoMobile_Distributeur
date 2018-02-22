@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import info.dicj.distributeur.Distributeur.Distributeur;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     private Distributeur distributeur;
 
@@ -151,13 +151,10 @@ public class MainActivity extends AppCompatActivity{
             message.setText(R.string.message_nom_abs);
         }
         else if (adore){
-            message.setText("Bonjour " + nom.getText().toString() + " merci de ton entrain!");
+            message.setText(getString(R.string.bonjour) + nom.getText().toString() + getString(R.string.merci));
         }
         else {
-            message.setText("Bonjour " + nom.getText().toString() + " ne perds pas espoir!");
+            message.setText(getString(R.string.bonjour) + nom.getText().toString() + getString(R.string.pasmerci));
         }
     }
-
-
-
 }
