@@ -1,6 +1,8 @@
 package info.dicj.distributeur.Distributeur;
 
 
+import info.dicj.distributeur.Distributeur.exception.AucunDistribuableException;
+import info.dicj.distributeur.Distributeur.exception.AucunMelangeException;
 import info.dicj.distributeur.Distributeur.exception.DebordementMelangeException;
 
 /**
@@ -18,8 +20,23 @@ public class Melange implements Recette {
     }
 
     @Override
-    public String getInformation() {
-        return "information";
+    public String getInformation() throws AucunMelangeException {
+        String info = " Votre mélange : \n Boisson(s) : \n";
+        if(this==null){
+            throw new AucunMelangeException("Pas de mélange !");
+        }
+        for (Boisson b : boissons)
+        {
+            info = info + " - " + b.getNom()+"\n";
+        }
+        if(saveur.estVide()){
+            info = "Aucune saveur. \n";
+        }
+        else {
+            info = "Saveur : " + saveur.getNom()+"\n";
+        }
+
+        return info;
     }
 
     public void ajouterBoisson (Boisson boisson) throws DebordementMelangeException {
@@ -36,10 +53,10 @@ public class Melange implements Recette {
     }
 
     public Recette getRecette(){
-        return null;
+        return this;
     }
 
     public boolean estPret(){
-        return true;
+        return true ? boissons.length !=0 : false;
     }
 }

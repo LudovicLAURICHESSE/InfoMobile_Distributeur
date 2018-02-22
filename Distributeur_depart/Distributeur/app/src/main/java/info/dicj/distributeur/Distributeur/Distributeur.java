@@ -1,8 +1,18 @@
 package info.dicj.distributeur.Distributeur;
 
+import android.util.Log;
+
 import java.util.HashMap;
+import java.util.Set;
 
 import info.dicj.distributeur.Distributeur.exception.DebordementMelangeException;
+import info.dicj.distributeur.Distributeur.impl.Bacon;
+import info.dicj.distributeur.Distributeur.impl.Epice;
+import info.dicj.distributeur.Distributeur.impl.Fraise;
+import info.dicj.distributeur.Distributeur.impl.Gingembre;
+import info.dicj.distributeur.Distributeur.impl.Orangeade;
+import info.dicj.distributeur.Distributeur.impl.Pepsi;
+import info.dicj.distributeur.Distributeur.impl.Racinette;
 
 /**
  * Created by ludod on 14/01/2018.
@@ -14,17 +24,30 @@ public class Distributeur {
     private Melange melangePrecedent;
     private Melange melangeCourant;
 
-    public Distributeur(){}
-    private void remplirDistributeur(){}
+    public Distributeur(){
+        boissons = new HashMap<>();
+        saveurs = new HashMap<>();
+        remplirDistributeur();
+    }
+    private void remplirDistributeur(){
+        saveurs.put("BACON",new Bacon());
+        saveurs.put("EPICE",new Epice());
+        saveurs.put("GINGEMBRE",new Gingembre());
+        boissons.put("PEPSI",new Pepsi());
+        boissons.put("FRAISE",new Fraise());
+        boissons.put("ORANGEADE",new Orangeade());
+        boissons.put("RACINETTE",new Racinette());
+    }
 
-    public Recette melangerRecette(){ return null;}
+    public Recette melangerRecette(){ return melangeCourant;}
 
     public void nouveauMelange(){
-        melangePrecedent = melangeCourant;
+        if(melangeCourant != null) melangePrecedent = melangeCourant;
+        else melangePrecedent=null;
         melangeCourant = new Melange();
     }
 
-    public Recette dupliquerMelange(){return null;}
+    public Recette dupliquerMelange(){return melangeCourant.getRecette();}
 
     public void ajouterBoisson(String nom) throws DebordementMelangeException {
         melangeCourant.ajouterBoisson(boissons.get(nom));
