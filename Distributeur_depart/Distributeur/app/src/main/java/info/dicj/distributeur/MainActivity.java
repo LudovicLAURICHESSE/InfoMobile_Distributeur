@@ -145,8 +145,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void afficherRecette(Recette recette)throws AucunMelangeException{
-
-
+        Log.i("DICJ","entree dans la methode afficherRecette");
         Context context = getApplicationContext();
         CharSequence information = recette.getInformation();
         int duree = Toast.LENGTH_LONG;

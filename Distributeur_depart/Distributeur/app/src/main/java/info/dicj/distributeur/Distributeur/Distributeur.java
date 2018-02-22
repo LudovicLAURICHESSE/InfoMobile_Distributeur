@@ -25,11 +25,15 @@ public class Distributeur {
     private Melange melangeCourant;
 
     public Distributeur(){
+        Log.i("DICJ","Constucteur de distributeur");
         boissons = new HashMap<>();
         saveurs = new HashMap<>();
         remplirDistributeur();
+        melangeCourant = new Melange();
+        melangePrecedent = new Melange();
     }
     private void remplirDistributeur(){
+        Log.i("DICJ","Ajout saveurs & boissons");
         saveurs.put("BACON",new Bacon());
         saveurs.put("EPICE",new Epice());
         saveurs.put("GINGEMBRE",new Gingembre());

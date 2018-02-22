@@ -1,5 +1,5 @@
 package info.dicj.distributeur.Distributeur;
-
+import android.util.Log;
 
 import info.dicj.distributeur.Distributeur.exception.AucunDistribuableException;
 import info.dicj.distributeur.Distributeur.exception.AucunMelangeException;
@@ -16,25 +16,29 @@ public class Melange implements Recette {
     private Saveur saveur;
 
     public Melange(){
+        Log.i("DICJ","Contructeur de Melange");
+        boissons = new Boisson[2];
+        saveur = null;
         nbBoisson =0;
     }
 
     @Override
     public String getInformation() throws AucunMelangeException {
+        Log.i("DICJ","entree dans melgane.getInformation");
         String info = " Votre mélange : \n Boisson(s) : \n";
         if(this==null){
             throw new AucunMelangeException("Pas de mélange !");
-        }
-        for (Boisson b : boissons)
+        } Log.i("DICJ","test null passe");
+        for (int i=0 ; i<nbBoisson ; i++)
         {
-            info = info + " - " + b.getNom()+"\n";
-        }
-        if(saveur.estVide()){
-            info = "Aucune saveur. \n";
+            info += " - " + boissons[i].getNom()+"\n";
+        } Log.i("DICJ","for boissons passe");
+        if(saveur==null){
+            info += "Aucune saveur. \n";
         }
         else {
-            info = "Saveur : " + saveur.getNom()+"\n";
-        }
+            info += "Saveur : " + saveur.getNom()+"\n";
+        } Log.i("DICJ","test pas de saveur passe");
 
         return info;
     }
@@ -47,7 +51,7 @@ public class Melange implements Recette {
     }
 
     public void ajouterSaveur (Saveur saveurN) throws DebordementMelangeException {
-        if (saveur.estVide())
+        if (saveur == null)
             saveur=saveurN;
         else throw new DebordementMelangeException("trop de saveurs");
     }
