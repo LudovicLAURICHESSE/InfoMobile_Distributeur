@@ -16,7 +16,6 @@ public class Melange implements Recette {
     private Saveur saveur;
 
     public Melange(){
-        Log.i("DICJ","Contructeur de Melange");
         boissons = new Boisson[2];
         saveur = null;
         nbBoisson =0;
@@ -24,21 +23,20 @@ public class Melange implements Recette {
 
     @Override
     public String getInformation() throws AucunMelangeException {
-        Log.i("DICJ","entree dans melgane.getInformation");
         String info = " Votre mélange : \n Boisson(s) : \n";
         if(this==null){
             throw new AucunMelangeException("Pas de mélange !");
-        } Log.i("DICJ","test null passe");
+        }
         for (int i=0 ; i<nbBoisson ; i++)
         {
             info += " - " + boissons[i].getNom()+"\n";
-        } Log.i("DICJ","for boissons passe");
+        }
         if(saveur==null){
             info += "Aucune saveur. \n";
         }
         else {
             info += "Saveur : " + saveur.getNom()+"\n";
-        } Log.i("DICJ","test pas de saveur passe");
+        }
 
         return info;
     }
@@ -63,4 +61,6 @@ public class Melange implements Recette {
     public boolean estPret(){
         return true ? boissons.length !=0 : false;
     }
+
+    public int getNbBoisson(){return nbBoisson;}
 }

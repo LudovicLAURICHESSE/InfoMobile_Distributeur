@@ -5,6 +5,8 @@ import android.util.Log;
 import java.util.HashMap;
 import java.util.Set;
 
+import info.dicj.distributeur.Distributeur.exception.AucunDistribuableException;
+import info.dicj.distributeur.Distributeur.exception.AucunMelangeException;
 import info.dicj.distributeur.Distributeur.exception.DebordementMelangeException;
 import info.dicj.distributeur.Distributeur.impl.Bacon;
 import info.dicj.distributeur.Distributeur.impl.Epice;
@@ -25,7 +27,6 @@ public class Distributeur {
     private Melange melangeCourant;
 
     public Distributeur(){
-        Log.i("DICJ","Constucteur de distributeur");
         boissons = new HashMap<>();
         saveurs = new HashMap<>();
         remplirDistributeur();
@@ -33,7 +34,6 @@ public class Distributeur {
         melangePrecedent = new Melange();
     }
     private void remplirDistributeur(){
-        Log.i("DICJ","Ajout saveurs & boissons");
         saveurs.put("BACON",new Bacon());
         saveurs.put("EPICE",new Epice());
         saveurs.put("GINGEMBRE",new Gingembre());
@@ -51,7 +51,12 @@ public class Distributeur {
         melangeCourant = new Melange();
     }
 
-    public Recette dupliquerMelange(){return melangeCourant.getRecette();}
+    public Recette dupliquerMelange()throws AucunMelangeException,AucunDistribuableException,DebordementMelangeException{
+        if(melangePrecedent==null)throw new AucunMelangeException("Aucun mélange précèdent !");
+        if(!melangePrecedent.estPret())throw new AucunDistribuableException("Aucune Boisson ou Saveur !");
+        if(melangePrecedent.getNbBoisson()>2)throw new DebordementMelangeException("Trop de boisson!");
+        melangeCourant=melangePrecedent;
+        return melangePrecedent.getRecette();}
 
     public void ajouterBoisson(String nom) throws DebordementMelangeException {
         melangeCourant.ajouterBoisson(boissons.get(nom));

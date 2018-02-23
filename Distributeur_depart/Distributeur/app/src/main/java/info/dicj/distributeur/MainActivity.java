@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("DICJ", "MainActivity.reverser");
 
-        /*
+
         try {
             distributeur.dupliquerMelange();
             verser(view);
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (DebordementMelangeException e) {
             e.printStackTrace();
         }
-        */
+
     }
 
     public void verser(View view) {
