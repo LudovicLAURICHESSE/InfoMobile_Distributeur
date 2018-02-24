@@ -6,13 +6,26 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">Helvetica</item>
     </style>
 
     <style name="Boutton">
-        <item name="android:background">@color/jaune</item>
+        <item name="android:background">@drawable/bouttonrond</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textColor">@color/blanc</item>
     </style>
 
-    <style name="Boutton.Boisson">
-        <item name="android:background">@color/rouge</item>
+    <style name="textAccentue">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="textNormal">
+        <item name="android:textColor">@color/noir</item>
+    </style>
+
+    <style name="ligne">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/ligne</item>
+        <item name="android:background">@color/noir</item>
     </style>
 </resources>

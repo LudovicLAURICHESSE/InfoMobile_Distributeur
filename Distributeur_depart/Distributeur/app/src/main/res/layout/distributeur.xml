@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0097A7 ">
+    android:background="@color/fond">
 
     <ScrollView
         android:id="@+id/scrollPPal"
@@ -16,17 +16,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/ligne"
-                android:background="#000000"/>
+            <View style="@style/ligne"/>
 
             <TextView
+                style="@style/textAccentue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/titre"
-                android:textSize="@dimen/taille_titre"
-                android:textColor="@color/blanc"/>
+                android:textSize="@dimen/taille_titre" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -34,20 +31,18 @@
                 android:contentDescription="@string/desc_capy"
                 android:src="@drawable/capy"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/ligne"
-                android:background="#000000"/>
+            <View style="@style/ligne"/>
 
             <TextView
+                style="@style/textAccentue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sondage"
-                android:textColor="@color/blanc"
                 android:textStyle="bold"
                 android:textSize="@dimen/taille_texte"/>
 
             <EditText
+                style="@style/textNormal"
                 android:id="@+id/nom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,6 +54,7 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
+                    style="@style/textNormal"
                     android:id="@+id/coursAdore"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -66,6 +62,7 @@
                     android:onClick="changerMessageAdore"/>
 
                 <RadioButton
+                    style="@style/textNormal"
                     android:id="@+id/coursNonAdore"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -74,24 +71,24 @@
             </RadioGroup>
 
             <TextView
+                style="@style/textNormal"
                 android:id="@+id/testAdore"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/taille_texte"/>
 
             <CheckBox
+                style="@style/textNormal"
                 android:id="@+id/check_verser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/check_bouton_verser"
                 android:onClick="changerVisibiliteBouttonVerser2"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/ligne"
-                android:background="#000000"/>
+            <View style="@style/ligne"/>
 
             <TextView
+                style="@style/textAccentue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/boissons"
@@ -112,7 +109,7 @@
                         android:onClick="ajouterBoisson"/>
 
                     <Button
-                        style="@style/Boutton.Boisson"
+                        style="@style/Boutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_column="1"
@@ -123,6 +120,7 @@
 
                 <TableRow>
                     <Button
+                        style="@style/Boutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_column="0"
@@ -131,6 +129,7 @@
                         android:onClick="ajouterBoisson"/>
 
                     <Button
+                        style="@style/Boutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_column="1"
@@ -141,6 +140,7 @@
             </TableLayout>
 
             <TextView
+                style="@style/textAccentue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/saveurs"
@@ -151,23 +151,26 @@
                 android:layout_height="wrap_content">
 
                 <Button
+                    style="@style/Boutton"
                     android:id="@+id/but_epices"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:text="@string/epices"
-                    android:onClick="ajouterSaveur"/>/>
+                    android:onClick="ajouterSaveur"/>
 
                 <Button
+                    style="@style/Boutton"
                     android:id="@+id/but_bacon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@id/but_epices"
                     android:layout_toEndOf="@id/but_epices"
                     android:text="@string/bacon"
-                    android:onClick="ajouterSaveur"/>/>
+                    android:onClick="ajouterSaveur"/>
 
                 <Button
+                    style="@style/Boutton"
                     android:id="@+id/but_gin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -178,6 +181,7 @@
             </RelativeLayout>
 
             <TextView
+                style="@style/textAccentue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/actions"
@@ -189,6 +193,7 @@
                 android:layout_height="wrap_content">
 
                 <Button
+                    style="@style/Boutton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/nouveau"
@@ -196,6 +201,7 @@
                     android:onClick="nouveau"/>
 
                 <Button
+                    style="@style/Boutton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/verser"
@@ -206,6 +212,7 @@
     </ScrollView>
 
     <Button
+        style="@style/Boutton"
         android:id="@+id/boutton_verser_precedent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
