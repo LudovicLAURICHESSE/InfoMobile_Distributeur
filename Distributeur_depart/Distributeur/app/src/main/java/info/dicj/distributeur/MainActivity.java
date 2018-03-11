@@ -1,5 +1,7 @@
 package info.dicj.distributeur;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,15 +20,37 @@ import info.dicj.distributeur.Distributeur.exception.DebordementMelangeException
 public class MainActivity extends AppCompatActivity {
 
     private Distributeur distributeur;
+    private NotificationManager nM;
+    private static final int ID_NOTIFICATION=1234;
+    private Notification notif;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.distributeur);
+        nM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+
 
         distributeur = new Distributeur();
 
         Log.i("DICJ", "MainActivity.oncreate");
+    }
+    public void createNotify(View view){
+        notif = new Notification.Builder(this)
+                .setContentTitle("Boisson Versée !")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentText("Félicitation vous avez versé votre boisson!")
+                .setAutoCancel(true)
+                .setVibrate(new long[]{0, 500, 110, 500})
+                .build();
+        try
+        {
+            nM.notify(ID_NOTIFICATION,notif);
+        }
+        catch(Exception e)
+        {
+            Log.i("DICJ","Notification echec");
+        }
     }
 
     public void reverser(View view) {
@@ -54,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             afficherRecette(distributeur.melangerRecette());
+            createNotify(view);
         } catch (AucunMelangeException e) {
             e.printStackTrace();
             Toast.makeText(MainActivity.this, "Pas de contenu !", Toast.LENGTH_SHORT).show();
